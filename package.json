@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/lab": "^4.0.0-alpha.60",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -10,9 +12,20 @@
     "@types/node": "^16.11.22",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "axios": "^0.25.0",
+    "debounce": "^1.2.1",
+    "lodash.debounce": "^4.0.8",
+    "node-sass": "^7.0.1",
     "react": "^17.0.2",
+    "react-debounce-input": "^3.2.5",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.1",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },
@@ -39,5 +52,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.6",
+    "@types/redux-logger": "^3.0.9"
   }
 }

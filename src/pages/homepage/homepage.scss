@@ -1,0 +1,15 @@
+.home-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    .home-title{
+        width: 200px;
+        height: 300px;
+        border: 2px solid green;
+        padding: 1rem;
+        margin: .5rem;
+        cursor: pointer;
+    }
+}
