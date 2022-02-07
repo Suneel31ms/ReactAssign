@@ -20,3 +20,9 @@ export const setUserPhone = (phone: any) => {
     payload: phone,
   };
 };
+export const setisLogIn = (togle: any) => {
+  return {
+    type: loginTypes.IS_LOGIN,
+    payload: togle,
+  };
+};

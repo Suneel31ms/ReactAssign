@@ -4,6 +4,7 @@ const initialState = {
   username: "",
   useremail: "",
   userphone: "",
+  isLogin:true
 };
 export const loginReducer = (state = initialState, action: any) => {
   switch (action.type) {
@@ -22,6 +23,11 @@ export const loginReducer = (state = initialState, action: any) => {
         ...state,
         userphone: action.payload,
       };
+      case loginTypes.IS_LOGIN:
+        return{
+          ...state,
+          isLogin: action.payload
+        }
     default:
       return state;
   }

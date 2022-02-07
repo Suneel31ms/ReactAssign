@@ -4,16 +4,13 @@ import StudentCard from "../students_card/StudentCard";
 
 import "./directory.style.scss";
 
-
 const StudentDirectory = () => {
-  
   const [searchfield, setsearchfield] = useState("");
-  const [studentListDefault, setstudentListDefault] = useState();
+  const [studentListDefault, setstudentListDefault]: any = useState();
   const [studentList, setStudentList] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-
       return await fetch("https://jsonplaceholder.typicode.com/users")
         .then((response) => response.json())
         .then((data) => {
@@ -24,8 +21,8 @@ const StudentDirectory = () => {
     fetchData();
   }, []);
 
-  const updatesearchfield = async (searchfield) => {
-    const filtered = studentListDefault.filter((student) => {
+  const updatesearchfield = async (searchfield: any) => {
+    const filtered: any = studentListDefault.filter((student: any) => {
       return student.name.toLowerCase().includes(searchfield.toLowerCase());
     });
     setsearchfield(searchfield);
@@ -34,9 +31,7 @@ const StudentDirectory = () => {
 
   return (
     <div>
-      
-      <SearchBar searchfield={searchfield} 
-      handleChange={updatesearchfield} />
+      <SearchBar searchfield={searchfield} handleChange={updatesearchfield} />
 
       <div className="directory-item">
         <StudentCard studentList={studentList} />

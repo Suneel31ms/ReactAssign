@@ -1,3 +1,3 @@
 export * from "./homedata/userAction";
 
-export { setUsername } from "./login/loginAction";
+export  *  from "./login/loginAction";

@@ -1,13 +1,13 @@
 import React, { useReducer } from "react";
- import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 //state type
 
 type State = {
   username: string;
-  email: string ;
-  password: string ;
-  confirmPassword: string ;
+  email: string;
+  password: string;
+  confirmPassword: string;
 };
 
 const initialState: State = {
@@ -49,65 +49,71 @@ const reducer = (state: State, action: Action): State => {
 };
 
 const SignUp = () => {
-   const navigate = useNavigate();
   const [state, dispatch] = useReducer(reducer, initialState);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    navigate('/signin')
-    alert(`Name- ${state.username} `);
-    
+
+    if (state.password === state.confirmPassword) {
+      alert(`Successfully Registered - ${state.username}`);
+      navigate("/");
+    } else {
+      alert("Your Credentials are not matched!");
+    }
   };
 
-  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
-      dispatch({
-        type: 'setUsername',
-        payload: event.target.value
-      });
-    };
-    const handleUserEmailChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
-      dispatch({
-        type: 'setemail',
-        payload: event.target.value
-      });
-    };
-    const handleUserPasswordChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
-      dispatch({
-        type: 'setconfirmPassword',
-        payload: event.target.value
-      });
-    };
-    const handleUserConfirmPasswordChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
-      dispatch({
-        type: 'setemail',
-        payload: event.target.value
-      });
-    };
+  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    dispatch({
+      type: "setUsername",
+      payload: event.target.value,
+    });
+  };
+  const handleUserEmailChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    dispatch({
+      type: "setemail",
+      payload: event.target.value,
+    });
+  };
+  const handleUserPasswordChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    dispatch({
+      type: "setPassword",
+      payload: event.target.value,
+    });
+  };
+  const handleUserConfirmPasswordChange: React.ChangeEventHandler<
+    HTMLInputElement
+  > = (event) => {
+    dispatch({
+      type: "setconfirmPassword",
+      payload: event.target.value,
+    });
+  };
 
   return (
     <div>
       <form onSubmit={handleSubmit} autoComplete="off">
         <div className="input-list">
           <div className="input-item">
-          <label>USERNAME</label>
+            <label>USERNAME</label>
             <input
-              id="username"
               type="text"
-              placeholder="Username"
+              value={state.username}
               onChange={handleUsernameChange}
               required
             />
           </div>
           <div className="input-item">
-          <label>EMAILID</label>
-          <input
-              id="email"
+            <label>EMAILID</label>
+            <input
               type="email"
-              placeholder="UserEmail"
+              value={state.email}
               onChange={handleUserEmailChange}
               required
             />
@@ -116,19 +122,17 @@ const SignUp = () => {
             {" "}
             <label>PASSWORD</label>
             <input
-              id="password"
               type="password"
-              placeholder="Password"
+              value={state.password}
               onChange={handleUserPasswordChange}
               required
             />
           </div>
           <div className="input-item">
-          <label>CONFIRM PASSWORD</label>
-          <input
-              id="password"
+            <label>CONFIRM PASSWORD</label>
+            <input
               type="password"
-              placeholder="Password"
+              value={state.confirmPassword}
               onChange={handleUserConfirmPasswordChange}
               required
             />

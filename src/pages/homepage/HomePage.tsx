@@ -21,7 +21,10 @@ function HomePage({ fetchUsers }: any) {
   return (
     <div>
       <h2 style={{ padding: "1rem", color: "#077e60" }}>
-        Welcome {state.username ? state.username : "user"}
+        Welcome{" "}
+        {state.username && !state.isLogin
+          ? state.username
+          : "user Please Login"}
       </h2>
       <div className="home-items">
         {userData.loading ? (

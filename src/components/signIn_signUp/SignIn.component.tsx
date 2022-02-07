@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { DebounceInput } from "react-debounce-input";
-import { setUsername } from "../../redux";
+import { setUsername, setisLogIn } from "../../redux";
+
 import "./signIn_signUp.scss";
 
 //state type
@@ -21,14 +22,17 @@ const SignIn = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    alert(`Successfully LogedIn - ${state.username}`);
-    navigate("/");
-    // if (state.username === "sonu@email.com" && state.password === "123") {
-    //   alert(`Successfully LogedIn - ${state.username}`);
-    //   navigate('/')
-    // } else {
-    //   alert("Your Credentials are not matched!");
-    // }
+    if (state.username.length > 0 && password.length > 0) {
+      if (state.username.length >= 4 && password.length >= 4) {
+        dispatch(setisLogIn(!state.isLogin));
+        alert(`Successfully LogedIn - ${state.username}`);
+        navigate("/home");
+      } else {
+        alert("Input length more than 3 ");
+      }
+    } else {
+      alert("Please Fill Credential");
+    }
   };
 
   const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> = (
@@ -46,13 +50,13 @@ const SignIn = () => {
   return (
     <div className="input-list">
       <h2>sign in</h2>
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form autoComplete="off">
         <div className="input-item">
           <label>USEREMAIL</label>
           <DebounceInput
             debounceTimeout={10000}
             type="text"
-            placeholder={state.username}
+            value={state.username}
             onChange={handleUsernameChange}
             required
           />
@@ -66,11 +70,11 @@ const SignIn = () => {
             required
           />
         </div>
-        <button type="submit" className="btn">
-          signIn
+        <button onClick={handleSubmit} className="btn">
+          logIn
         </button>
         <NavLink to="/signup" className="btn">
-          SIGN UP
+          register
         </NavLink>
       </form>
     </div>
