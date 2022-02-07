@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Suneel31ms/ReactAssign.git/static/css/main.e8d8cf7b.css",
+    "main.js": "/Suneel31ms/ReactAssign.git/static/js/main.2405fb96.js",
+    "index.html": "/Suneel31ms/ReactAssign.git/index.html",
+    "main.e8d8cf7b.css.map": "/Suneel31ms/ReactAssign.git/static/css/main.e8d8cf7b.css.map",
+    "main.2405fb96.js.map": "/Suneel31ms/ReactAssign.git/static/js/main.2405fb96.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8d8cf7b.css",
+    "static/js/main.2405fb96.js"
+  ]
+}
