@@ -6,7 +6,7 @@ import { setUsername, setisLogIn } from "../../redux";
 
 import "./signIn_signUp.scss";
 
-//state type
+
 export type State = {
   login: string;
   username: string;

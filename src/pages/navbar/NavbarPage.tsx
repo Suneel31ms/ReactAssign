@@ -21,7 +21,7 @@ const NavbarPage = () => {
       <nav className="navbar">
         <Link to="/home">
           {" "}
-          <img src="s_logo.png" alt="logo" />
+          <img src="https://previews.123rf.com/images/iul123rf/iul123rf1905/iul123rf190500122/123154028-sv-buchstaben-logo.jpg" alt="logo" />
         </Link>
         <div className="nav-item">
           <Link to="/home">Home</Link>

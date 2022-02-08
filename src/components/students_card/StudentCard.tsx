@@ -9,7 +9,7 @@ const StudentCard = ({ studentList = [] }) => {
         return (
           <div className="student-card" key={id}>
             <h2>
-              <img src="student.jpg" alt="student" />
+              <img src="https://thumbs.dreamstime.com/z/people-avatar-icons-student-student-avatar-icon-colors-193586658.jpg" alt="student" />
             </h2>
             <h2>{id}</h2>
             <h4>{name}</h4>

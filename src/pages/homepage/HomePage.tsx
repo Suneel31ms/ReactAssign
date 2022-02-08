@@ -29,7 +29,7 @@ function HomePage({ fetchUsers }: any) {
       <div className="home-items">
         {userData.loading ? (
           <h2>
-            <img src="load.gif" alt="loading" />
+            <img className="loading-img" src="https://bestanimations.com/media/loading-gears/687571445loading-gear-5.gif" alt="loading" />
           </h2>
         ) : (
           userData.user

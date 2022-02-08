@@ -10,10 +10,13 @@
   border: 1px solid #077e60;
   transition: 0.5s;
   box-shadow: 0 0 10px 5px #077e60;
+ 
 
   img {
-    width: 30%;
+    width: 7%;
     margin-left: 1rem;
+    float: left;
+    border-radius: 5rem;
   }
 
   .nav-item {
